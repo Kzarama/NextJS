@@ -2,8 +2,16 @@
 
 ## Content
 
--   **[Instalación](#Instalar-NextJS)**
+-   **[Instalar NextJS](#Instalar-NextJS)**
+    -   **[Requisitos](#Requisitos)**
+    -   **[Instalación](#Instalación)**
 -   **[Routing](#Routing)**
+    -   **[Rutas dinamicas](#Rutas-dinamicas)**
+    -   **[Linkeando paginas](#Linkeando-paginas)**
+-   **[Extendiendo NextJS](#Extendiendo-NextJS)**
+    -   **[Extender document](#Extender-document)**
+    -   **[Extender app](#Extender-app)**
+-   **[Styles in NextJS](#Styles-in-NextJS)**
 
 # Instalar NextJS
 
@@ -58,7 +66,7 @@ Para hacer uso de las rutas dinamicas se debe crear una carpeta con el predeceso
 ```
 domain/product/papas
           ^      ^
-    predecesor  identificador
+   predecesor  identificador
 ```
 
 Crear una carpeta llamada product y dentro un archivo nombrado: `[id].js`, añadir el codigo de react y para tomar el id en el codigo se debe:
@@ -74,3 +82,42 @@ router.query.id; // hacer el query para mostrar el id del producto
 ## Linkeando paginas
 
 Para linkear las paginas se hace uso de Link del modulo de `next/link`
+
+# Extendiendo NextJS
+
+## Extender document
+
+(No tan recomendado)
+Extender el document sirve para hacer modificaciones sobre todas las paginas, por ejemplo para añadir favicons o fuentes personalizadas, tambien para añadir estilos o scripts de librerias externas, meta tags o cualquier cosa que se necesite añadir en el head del documento.
+
+[Documentación de Next sobre Custom document](https://nextjs.org/docs/advanced-features/custom-document)
+
+## Extender app
+
+Extender el app sirve para añadir providers, layouts, themes, props o cualquier cosa que necesitemos para toda la aplicacion.
+
+[Documentación de Next sobre Custom app](https://nextjs.org/docs/advanced-features/custom-app)
+
+# Styles in NextJS
+
+Nativamente en Next se puede hacer uso de 3 formas para aplicar css:
+
+1. Global CSS: crear un archivo global `.css` en la ruta principal e importarlo en `_app.js`.
+
+    ```javascript
+    import "../style.css";
+    ```
+
+2. Module CSS: crear un archivo `.css` e importarlo en los archivos que se va a usar (crea las clases con un hash en el nombre para evitar colisiones).
+
+    ```javascript
+    import styles from "archivo.css";
+    ```
+
+3. CSS-in-JS Styled JSX: propia de Next y desarrollada por Vercel, se usa dentro de un componente de react por medio de las etiquetas style con un atributo jsx y dentro de la etiqueta especificar un template literal de js "``" y colocar el nombre de la clase en la etiqueta en la cual se quiere aplicar (crea las clases con un hash en el nombre para evitar colisiones).
+
+    ```html
+    <style jsx>
+    	{``}
+    </style>
+    ```
