@@ -2,7 +2,8 @@
 
 ## Content
 
--   **[Instalación](#Instalar_NextJS)**
+-   **[Instalación](#Instalar-NextJS)**
+-   **[Routing](#Routing)**
 
 # Instalar NextJS
 
@@ -71,7 +72,3 @@ Crear una carpeta llamada product y dentro un archivo nombrado: `[id].js`, añad
 ## Linkeando paginas
 
 Para linkear las paginas se hace uso de Link del modulo de `next/link`
-
-# API
-
-Creacion de API,
