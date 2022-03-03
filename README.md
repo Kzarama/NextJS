@@ -19,7 +19,7 @@
 
 Forma automatica en donde un paquete da una estructura predeterminada.
 
-```
+```console
   yarn create next-app
 ```
 
@@ -27,13 +27,13 @@ Forma automatica en donde un paquete da una estructura predeterminada.
 
 Inicializar un proyecto de npm.
 
-```
+```console
   npm init -y
 ```
 
 Instalar paquetes a usar y framework.
 
-```
+```console
 yarn add next react react-dom
 ```
 
@@ -63,10 +63,12 @@ domain/product/papas
 
 Crear una carpeta llamada product y dentro un archivo nombrado: `[id].js`, añadir el codigo de react y para tomar el id en el codigo se debe:
 
-```
-  import { useRouter } from 'next/router' # importar el router de next
-  const router = useRouter(); # instanciar el router
-  router.query.id # hacer el query para mostrar el id del producto
+```javascript
+import { useRouter } from "next/router"; // importar el router de next
+
+const router = useRouter(); // instanciar el router
+
+router.query.id; // hacer el query para mostrar el id del producto
 ```
 
 ## Linkeando paginas
